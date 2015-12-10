@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="base.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="4463" topLine="171" />
+	</File>
+	<File name="base.h" open="1" top="0" tabpos="6">
+		<Cursor position="571" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="12240" topLine="515" />
+	</File>
+	<File name="random.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="3506" topLine="110" />
+	</File>
+	<File name="random.h" open="1" top="0" tabpos="3">
+		<Cursor position="272" topLine="0" />
+	</File>
+	<File name="structures.h" open="1" top="0" tabpos="4">
+		<Cursor position="277" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

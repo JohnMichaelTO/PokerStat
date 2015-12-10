@@ -1,0 +1,293 @@
+#include <iostream>
+#include <stdio.h>
+#include <windows.h>
+#include <time.h>
+#include "structures.h"
+#include "base.h"
+#include "random.h"
+
+using namespace std;
+
+/*
+t_combinaison detectPaire(t_carte main[])
+{
+    int cpt, cpt2;
+    t_combinaison combinaison;
+
+    combinaison.combi = RIEN;
+    combinaison.numero = 0;
+
+    for(cpt = 0; cpt < 7; cpt++)
+    {
+        for(cpt2 = 0; cpt2 < 7; cpt2++)
+        {
+            if(cpt != cpt2)
+            {
+                if(main[cpt].numero == main[cpt2].numero && combinaison.numero <= main[cpt].numero)
+                {
+                    combinaison.combi = PAIRE;
+                    combinaison.numero = main[cpt].numero;
+                }
+            }
+        }
+    }
+    return combinaison;
+}
+*/
+
+t_combinaison detectCombinaison(t_carte main[])
+/*
+Rien : OK
+Une paire : OK
+Deux paires : OK
+Brelan : OK
+Suite (ou Quinte): OK
+Couleur : 5 cartes de la même couleur, qui ne se suivent pas forcément. Classement selon la valeur de la carte la plus élevée.
+Full : OK
+Carré : OK
+Quinte Flush: suite dont les 5 cartes dont de la même couleur (ex : 4,5,6,7,8 de trèfle). Classement selon la hauteur de la carte la plus élevée.
+*/
+{
+    int cpt, cpt2;
+    int nb = 0, paire = 0;
+    int nb_brelan = 0, brelan = 0;
+    int nb_carre = 0, carre = 0;
+    int full = 0;
+    int nb_suite = 1, suite = 0;
+
+    t_combinaison combinaison;
+    combinaison.combi = RIEN;
+    combinaison.numero = 0;
+
+    for(cpt = 0; cpt < 6; cpt++)
+    {
+        if(main[cpt].numero == main[cpt + 1].numero)
+        {
+            nb = nb + 1;
+            nb_brelan = nb_brelan + 1;
+            nb_carre = nb_carre + 1;
+        }
+        else
+        {
+            nb = 0;
+            nb_brelan = 0;
+            nb_carre = 0;
+        }
+
+        /* [START] Détection d'une suite */
+        if(main[cpt].numero == main[cpt + 1].numero - 1)
+        {
+            nb_suite = nb_suite + 1;
+            if(nb_suite >= 5)
+            {
+                combinaison.numero = main[cpt + 1].numero;
+                suite = 1;
+            }
+            #if DEBUG
+            printf("%i => ", main[cpt].numero);
+            printf("%i\n", nb_suite);
+            #endif
+        }
+        else if(main[cpt].numero != main[cpt + 1].numero)
+        {
+            nb_suite = 1;
+        }
+        /* [END] Détection d'une suite */
+
+        if(nb == 1)
+        {
+            if(brelan > 0 && combinaison.numero != main[cpt].numero)
+            {
+                full = full + 1;
+                #if DEBUG
+                printf("Valide 1\n");
+                #endif
+            }
+            else if(brelan == 0 && nb_brelan != 2 && suite == 0)
+            {
+                combinaison.numero = main[cpt].numero;
+            }
+            paire = paire + 1;
+            nb = 0;
+        }
+
+        if(nb_brelan == 2 && carre == 0)
+        {
+            if(paire > 2 && main[cpt].numero == combinaison.numero)
+            {
+                full = full + 1;
+                #if DEBUG
+                printf("Valide 2\n");
+                #endif
+            }
+            if(suite == 0)
+            {
+                combinaison.numero = main[cpt].numero;
+            }
+            nb_brelan = 0;
+            brelan = brelan + 1;
+        }
+
+        if(nb_carre == 3)
+        {
+            combinaison.numero = main[cpt].numero;
+            nb_carre = 0;
+            carre = carre + 1;
+        }
+    }
+
+    if(carre >= 1) combinaison.combi = CARRE;
+    else if(full >= 1 && carre == 0) combinaison.combi = FULL;
+    else if(suite == 1 && full == 0) combinaison.combi = SUITE;
+    else if(brelan >= 1 && suite == 0) combinaison.combi = BRELAN;
+    else if(paire >= 2 && brelan == 0) combinaison.combi = DEUX_PAIRES;
+    else if(paire >= 1 && paire < 2 && brelan == 0) combinaison.combi = PAIRE;
+
+    return combinaison;
+}
+
+void selectionMainDepart(t_carte jeu[])
+{
+    t_carte carte1, carte2, main[7];
+    char selection, c;
+    int i = -1, j = -1;
+    t_combinaison combinaison;
+
+    printf("Selection d'une main de depart\n--\n");
+    printf("1. Une paire\n");
+    printf("2. Deux cartes qui se suivent mais de couleur differente\n");
+    printf("3. As et 8 de la meme couleur\n");
+    printf("4. 'Suited connectors' : 2 cartes qui se suivent dans la meme couleur\n");
+    printf("5. 7 de trefle et 2 de carreau\n\n");
+
+    do
+    {
+        printf("\nSelectionner la main de depart : ");
+        scanf("%c", &selection);
+        while(((c = getchar()) != '\n') && c != EOF)
+        {
+            selection = -1;
+        }
+    } while(selection < '1' || selection > '5');
+
+    switch(selection)
+    {
+        case '1':
+            i = rand() % 13 + 1;
+            carte1.numero = i;
+            carte2.numero = i,
+
+            i = rand() % 4;
+            carte1.couleur = selectionCouleur(carte1, i);
+
+            j = rand() % 3;
+            #if DEBUG
+            printf("rand j : %i", j);
+            #endif
+            if(i == 0 || (i == 1 && j >= 1) || (i == 2 && j >= 2))
+            {
+                j = j + 1;
+            }
+            carte2.couleur = selectionCouleur(carte2, j);
+            break;
+        case '2':
+            i = rand() % 13 + 1;
+            carte1.numero = i;
+            if(i == 13)
+            {
+                carte2.numero = 1;
+            }
+            else
+            {
+                carte2.numero = i + 1;
+            }
+
+            i = rand() % 4;
+            carte1.couleur = selectionCouleur(carte1, i);
+
+            j = rand() % 3;
+            if(i == 0 || (i == 1 && j >= 1) || (i == 2 && j >= 2))
+            {
+                j = j + 1;
+            }
+            carte2.couleur = selectionCouleur(carte2, j);
+            break;
+        case '3':
+            carte1.numero = 8;
+            carte2.numero = 1;
+
+            i = rand() % 4;
+            carte1.couleur = selectionCouleur(carte1, i);
+            carte2.couleur = selectionCouleur(carte2, i);
+            break;
+        case '4':
+            i = rand() % 13 + 1;
+            carte1.numero = i;
+            if(i == 13)
+            {
+                carte2.numero = 1;
+            }
+            else
+            {
+                carte2.numero = i + 1;
+            }
+
+            i = rand() % 4;
+            carte1.couleur = selectionCouleur(carte1, i);
+            carte2.couleur = selectionCouleur(carte2, i);
+            break;
+        case '5':
+            carte1.numero = 7;
+            carte2.numero = 2;
+
+            carte1.couleur = CARREAU;
+            carte2.couleur = CARREAU;
+            break;
+    }
+    printf("Les deux cartes de la main sont :\n");
+    printf("- %i | %i\n", carte1.numero, carte1.couleur);
+    printf("- %i | %i\n", carte2.numero, carte2.couleur);
+    placerMain(jeu, carte1, carte2);
+    melangeJeu(jeu, 50);
+    afficheJeu(jeu, 52);
+    copierVersMain(jeu, main);
+    afficheJeu(main, 7);
+    trierMain(main);
+    afficheJeu(main, 7);
+    combinaison = detectCombinaison(main);
+    printf("\n\nCombinaison : %i - ", combinaison.numero);
+    ecrireCombinaison(combinaison.combi);
+    printf("\n");
+}
+
+int main()
+{
+    srand(time(NULL));
+    t_carte jeu[52];
+    t_carteStats tabStats[52];
+
+    // initJeu(jeu);
+
+    // afficheJeu(jeu, 52);
+    /*
+    melangeJeu(jeu, 52);
+    afficheJeu(jeu, 52);
+    */
+    // initStats(tabStats);
+    // afficheStats(tabStats);
+
+    // generate10miliion(jeu, tabStats);
+
+    // afficheStats(tabStats);
+    while(1)
+    {
+        initJeu(jeu);
+        selectionMainDepart(jeu);
+    }
+    /*
+    melangeJeu(jeu, 52);
+    afficheJeu(jeu, 52);
+    */
+
+    return 0;
+}

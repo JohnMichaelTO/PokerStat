@@ -1,0 +1,288 @@
+# depslib dependency file v1.0
+1321095596 source:h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\conio.c
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<windows.h>
+	<string.h>
+	"conio.h"
+
+1321095612 h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\conio.h
+	<stdio.h>
+
+1337121124 source:h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\main.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+	"probabilites.h"
+
+1336833804 h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\structures.h
+
+1337107196 h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\base.h
+
+1336505418 h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\random.h
+
+1337107154 source:h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\random.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+
+1337107224 source:h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\base.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"random.h"
+
+1321095596 source:e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\conio.c
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<windows.h>
+	<string.h>
+	"conio.h"
+
+1321095612 e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\conio.h
+	<stdio.h>
+
+1336577004 source:e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\main.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	"structures.h"
+	"base.h"
+	"random.h"
+	"conio.h"
+	"probabilites.h"
+
+1336577116 e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\structures.h
+
+1336575912 e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\base.h
+
+1336505418 e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\random.h
+
+1336575900 source:e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\base.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"random.h"
+
+1336566092 source:e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\random.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"random.h"
+	"conio.h"
+
+1336570922 e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\probabilites.h
+
+1336575930 source:e:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\probabilites.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	"structures.h"
+	"base.h"
+	"random.h"
+	"conio.h"
+	"probabilites.h"
+
+1337114514 source:h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\probabilites.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+	"probabilites.h"
+
+1336570922 h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\probabilites.h
+
+1336769914 h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\saisies.h
+
+1336848124 source:h:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\saisies.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+
+1321095596 source:d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\conio.c
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<windows.h>
+	<string.h>
+	"conio.h"
+
+1321095612 d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\conio.h
+	<stdio.h>
+
+1336744730 source:d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\main.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+	"probabilites.h"
+
+1336604658 d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\structures.h
+
+1336596430 d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\base.h
+
+1336607420 d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\saisies.h
+
+1336505418 d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\random.h
+
+1336570922 d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\probabilites.h
+
+1336607404 source:d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\probabilites.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+	"probabilites.h"
+
+1336607684 source:d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\random.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+
+1336607356 source:d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\saisies.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+
+1336599546 source:d:\efrei\l1\semestre_2\projets\c\projet_4\pokerstat\base.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"random.h"
+
+1321095596 source:k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\conio.c
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<windows.h>
+	<string.h>
+	"conio.h"
+
+1321095612 k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\conio.h
+	<stdio.h>
+
+1337126668 source:k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\main.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+	"probabilites.h"
+	"multijoueurs.h"
+
+1336833804 k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\structures.h
+
+1337126184 k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\base.h
+
+1337126498 k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\saisies.h
+
+1337125864 k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\random.h
+
+1337126386 k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\probabilites.h
+
+1337126654 k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\multijoueurs.h
+
+1337126664 source:k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\multijoueurs.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+	"probabilites.h"
+	"multijoueurs.h"
+
+1337126328 source:k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\probabilites.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<time.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+	"probabilites.h"
+
+1337125828 source:k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\random.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+	"random.h"
+	"conio.h"
+
+1337126470 source:k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\saisies.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"saisies.h"
+
+1337126122 source:k:\efrei\l1\semestre_2\projets\c\projet_4\programme\pokerstat\base.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	"structures.h"
+	"base.h"
+	"random.h"
+

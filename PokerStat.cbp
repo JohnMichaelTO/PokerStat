@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PokerStat" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\PokerStat" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\PokerStat" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="base.cpp" />
+		<Unit filename="base.h" />
+		<Unit filename="conio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="conio.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="multijoueurs.cpp" />
+		<Unit filename="multijoueurs.h" />
+		<Unit filename="probabilites.cpp" />
+		<Unit filename="probabilites.h" />
+		<Unit filename="random.cpp" />
+		<Unit filename="random.h" />
+		<Unit filename="saisies.cpp" />
+		<Unit filename="saisies.h" />
+		<Unit filename="structures.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
